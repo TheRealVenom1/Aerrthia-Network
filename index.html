@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aetheria Craft - Epic Minecraft Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --primary-dark: #0099cc;
+            --secondary: #ff00aa;
+            --bg: #0a0e17;
+            --card-bg: rgba(20, 25, 40, 0.7);
+            --text: #e0f7ff;
+            --glow: 0 0 20px rgba(0, 212, 255, 0.6);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #0a0015, #000814);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        .stars {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="10" cy="10" r="1" fill="white"/><circle cx="80" cy="20" r="1.5" fill="white"/><circle cx="30" cy="70" r="0.8" fill="white"/></svg>') repeat;
+            opacity: 0.4;
+            animation: drift 120s linear infinite;
+        }
+        @keyframes drift {
+            from { background-position: 0 0; }
+            to { background-position: 100px 100px; }
+        }
+        header {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://i.ibb.co/RTvZpgBC/1769883037242.png') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            color: var(--primary);
+            text-shadow: var(--glow), 0 0 40px var(--primary-dark);
+            margin-bottom: 20px;
+            animation: pulse 4s infinite alternate;
+        }
+        @keyframes pulse {
+            from { text-shadow: 0 0 20px rgba(0,212,255,0.6); }
+            to { text-shadow: 0 0 40px rgba(0,212,255,0.9), 0 0 60px rgba(0,212,255,0.4); }
+        }
+        .tagline {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 20px auto;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 40px;
+            margin: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: var(--glow);
+            transition: all 0.4s;
+            backdrop-filter: blur(5px);
+        }
+        .btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 0 40px rgba(0,212,255,0.8);
+        }
+        .ip-box {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            box-shadow: var(--glow);
+        }
+        .ip-box h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .ip {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: white;
+            word-break: break-all;
+        }
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s;
+        }
+        .card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        footer {
+            background: rgba(0,0,0,0.8);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <header>
+        <h1>AETHERIA CRAFT</h1>
+        <p class="tagline">اكتشف عالم سماوي مليان مغامرات • بناء • قتال • ومجتمع رهيب!</p>
+        
+        <a href="https://discord.gg/uRt37RNh7Q" class="btn" target="_blank">ادخل الديسكورد دلوقتي 🚀</a>
+        
+        <div class="ip-box">
+            <h2>IP السيرفر للدخول</h2>
+            <div class="ip">play.aetheriacraft.qqz.io:37430</div>
+            <p style="margin-top:15px; font-size:1.1rem;">انسخ الـ IP واضغط Play في ماين كرافت!</p>
+        </div>
+    </header>
+
+    <section>
+        <h2 style="text-align:center; font-size:3rem; margin-bottom:50px; color:var(--primary);">ليه Aetheria Craft هو الأفضل؟</h2>
+        <div class="features">
+            <div class="card">
+                <h3>🌌 عالم سماوي مخصص</h3>
+                <p>خرائط فريدة، أحداث يومية، وتحديثات مستمرة عشان متزهقش أبدًا!</p>
+            </div>
+            <div class="card">
+                <h3>⚔️ مودات قتال و PvP نار</h3>
+                <p>أرينا، كيت PvP، وأسلحة أسطورية – كل اللي بيحب الإثارة هيحبه هنا.</p>
+            </div>
+            <div class="card">
+                <h3>🏰 بناء حر وكرييتف</h3>
+                <p>ابني اللي نفسك فيه بدون حدود، مع دعم للـ WorldEdit والـ schematics.</p>
+            </div>
+            <div class="card">
+                <h3>👥 مجتمع مصري وعربي جامد</h3>
+                <p>أصحابك هنا، فعاليات، جوائز، وديسكورد نشيط 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align:center;">
+        <h2 style="font-size:3rem; margin-bottom:40px; color:var(--primary);">جاهز تبدأ مغامرتك؟</h2>
+        <a href="https://discord.gg/uRt37RNh7Q" class="btn" target="_blank" style="font-size:1.6rem; padding:20px 60px;">انضم للسيرفر دلوقتي!</a>
+        <p style="margin-top:30px; font-size:1.3rem;">الأبواب مفتوحة... والسماء بتناديك 🌌</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Aetheria Craft - كل الحقوق محفوظة | Made with 🔥 in Egypt</p>
+    </footer>
+</body>
+</html>
