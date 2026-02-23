@@ -1,7 +1,7 @@
 /* الألوان والأساسيات */
 :root {
     --bg-color: #05070a;
-    --card-bg: rgba(13, 17, 23, 0.8);
+    --card-bg: rgba(13, 17, 23, 0.9);
     --primary-glow: #00d2ff;
     --secondary-glow: #ff00c8;
     --text-color: #ffffff;
@@ -20,9 +20,14 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
+    /* ده عشان كل حاجة في الصفحة تبقى في النص */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* خلفية النجوم المنقطة */
+/* خلفية النجوم */
 .stars-container {
     position: fixed;
     top: 0;
@@ -31,39 +36,40 @@ body {
     height: 100%;
     background-image: 
         radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0));
-    background-repeat: repeat;
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0));
     background-size: 200px 200px;
     opacity: 0.3;
     z-index: -1;
 }
 
-/* الهيدر واللوجو */
-header {
-    text-align: center;
-    padding: 100px 20px;
+header, section, footer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط أفقي */
+    justify-content: center; /* توسيط رأسي */
+    padding: 60px 20px;
 }
 
 .logo {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 4rem); /* حجم مرن مع الزووم */
     font-weight: 900;
-    letter-spacing: 5px;
     text-shadow: 0 0 20px var(--primary-glow);
     margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.accent {
-    color: var(--accent-color);
-}
+.accent { color: var(--accent-color); }
 
 .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 30px;
     color: #cbd5e0;
 }
 
-/* الزرار الجامد */
+/* الزرار */
 .btn-main {
     display: inline-block;
     padding: 15px 40px;
@@ -72,99 +78,53 @@ header {
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    transition: 0.3s;
 }
 
-.btn-main:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 0, 200, 0.7);
-}
+.btn-main:hover { transform: scale(1.05); }
 
 /* صندوق الـ IP */
 .ip-box {
-    margin-top: 50px;
+    margin-top: 40px;
     border: 2px solid var(--primary-glow);
-    display: inline-block;
-    padding: 30px;
+    padding: 25px;
     border-radius: 15px;
     background: rgba(0, 210, 255, 0.05);
-    box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
 }
 
 .ip-address {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 5vw, 2rem);
     font-weight: bold;
-    margin: 10px 0;
-    letter-spacing: 2px;
+    word-wrap: break-word; /* عشان لو عملت زووم جامد الكلام ميعملش Scroll بالعرض */
 }
 
-/* قسم المميزات والبطاقات */
-.features {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: var(--accent-color);
-}
-
+/* البطاقات */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .card {
     background: var(--card-bg);
-    padding: 30px;
-    border-radius: 20px;
+    padding: 25px;
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* سنترة المحتوى جوا الكارت */
 }
 
-.card:hover {
-    border-color: var(--primary-glow);
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-}
+.card h3 { color: var(--accent-color); margin-bottom: 10px; }
 
-.card h3 {
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-/* الفوتر */
-footer {
-    text-align: center;
-    padding: 100px 20px 50px;
-}
-
-footer h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.footer-note {
-    margin-top: 20px;
-    font-style: italic;
-    color: #a0aec0;
-}
-
-hr {
-    margin: 40px auto;
-    width: 80%;
+footer hr {
+    width: 50%;
+    margin: 30px 0;
     border: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.copyright {
-    font-size: 0.9rem;
-    color: #718096;
 }
