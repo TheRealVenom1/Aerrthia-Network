@@ -1,62 +1,113 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aetheria Network</title>
+    <title>Aetheria Network | Official Website</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="stars-container"></div>
+    <div class="lang-switcher" id="langToggle">
+        <i class="fas fa-globe"></i>
+        <span id="langText">العربية</span>
+    </div>
 
-    <header>
-        <h1 class="logo">AETHERIA <span class="accent">NETWORK</span></h1>
-        <p class="subtitle">اكتشف عالم سماوي مليان مغامرات! • بناء • قتال • ومجتمع رهيب</p>
-        
-        <a href="https://discord.gg/uRt37RNh7Q" target="_blank" class="btn-main">ادخل الديسكورد دلوقتي 🚀</a>
+    <div class="bg-glow"></div>
 
-        <div class="ip-box">
-            <h3>السيرفر للدخول IP</h3>
-            <div class="ip-address">aetherianetwork.mcsh.io</div>
-            <p>هو انت مستني اية؟ يلا خد الأي بي و اتخل السيرفر</p>
+    <nav>
+        <div class="logo">
+            <img src="https://i.ibb.co/MkpCZkFf/file-00000000f9b0720abda2d0ceb0edf58b.png" alt="Logo">
+            <span class="logo-text">AETHERIA</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="#owners" data-en="Owners" data-ar="الأصحاب">Owners</a>
+            <a href="#connect" data-en="Connect" data-ar="تواصل">Connect</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="https://i.ibb.co/MkpCZkFf/file-00000000f9b0720abda2d0ceb0edf58b.png" class="main-logo" alt="Aetheria Logo">
+            <h1 id="mainTitle">AETHERIA <span class="gradient-text">NETWORK</span></h1>
+            <p id="mainDesc">The ultimate Minecraft experience — survival, community, and beyond.</p>
+            <div class="server-status">
+                <div class="status-dot"></div>
+                <span data-en="Server Online" data-ar="السيرفر متاح">Server Online</span>
+            </div>
         </div>
     </header>
 
-    <section class="features">
-        <h2>ليه Aetheria Network هو الأفضل؟</h2>
-        
-        <div class="cards-grid">
-            <div class="card">
-                <h3>🌌 عالم سماوي مخصص</h3>
-                <p>خرائط فريدة، أحداث يومية، وتحديثات مستمرة عشان متزهقش أبداً!</p>
+    <section class="info-grid">
+        <div class="card glass" onclick="copyIP()">
+            <div class="icon-box blue"><i class="fas fa-server"></i></div>
+            <h3 data-en="Server IP" data-ar="عنوان السيرفر">Server IP</h3>
+            <p id="ipText">aetherianetwork.mcsh.io</p>
+            <span class="copy-hint" data-en="Click to copy" data-ar="اضغط للنسخ">Click to copy</span>
+        </div>
+
+        <div class="card glass">
+            <div class="icon-box purple"><i class="fas fa-layer-group"></i></div>
+            <h3 data-en="Version" data-ar="الإصدار">Version</h3>
+            <p>1.12.2 - 1.21.4</p>
+        </div>
+    </section>
+
+    <section class="owners-section" id="owners">
+        <h2 class="section-title" data-en="Meet Our Owners" data-ar="أصحاب السيرفر">Meet Our Owners</h2>
+        <div class="owners-grid">
+            <div class="owner-card glass">
+                <div class="avatar-wrapper border-orange">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69a332bebfc1a29f8b4ecf6e/aa38d76a2_Screenshot2025-09-21130106.png" alt="Asser">
+                </div>
+                <h3>Asser</h3>
+                <span class="role orange">Owner</span>
             </div>
 
-            <div class="card">
-                <h3>⚔️ مودات قتال و PvP نار</h3>
-                <p>أسلحة أسطورية - كل اللي بيحب PvP، أرينا، كيت، الإثارة هتحبه هنا.</p>
+            <div class="owner-card glass">
+                <div class="avatar-wrapper border-cyan">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69a332bebfc1a29f8b4ecf6e/655405631_WhatsAppImage2026-02-28at85453PM.jpeg" alt="Ammar">
+                </div>
+                <h3>Ammar</h3>
+                <span class="role cyan">Owner</span>
             </div>
 
-            <div class="card">
-                <h3>🏰 بناء وحرب</h3>
-                <p>هتبني اللي نفسك فيه و تموت اللي انت عايزه ☠️</p>
+            <div class="owner-card glass">
+                <div class="avatar-wrapper border-pink">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69a332bebfc1a29f8b4ecf6e/6ff451cb5_image.png" alt="Kiro">
+                </div>
+                <h3>Venom</h3>
+                <span class="role pink">Owner</span>
             </div>
 
-            <div class="card">
-                <h3>👥 مجتمع مصري وعربي جامد</h3>
-                <p>أصحابك هنا، فعاليات، جوائز، وديسكورد نشيط 24/7.</p>
+            <div class="owner-card glass">
+                <div class="avatar-wrapper border-blue">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69a332bebfc1a29f8b4ecf6e/43d4ab7d7_Screenshot2026-02-28205411.png" alt="Belal">
+                </div>
+                <h3>Belal</h3>
+                <span class="role blue">Owner</span>
             </div>
         </div>
     </section>
 
-    <footer>
-        <h2>جاهز تبدأ مغامرتك؟</h2>
-        <a href="https://discord.gg/uRt37RNh7Q" target="_blank" class="btn-main">انضم للسيرفر دلوقتي!</a>
-        <p class="footer-note">🌌 الأبواب مفتوحة... والسماء بتناديك</p>
-        <hr>
-        <p class="copyright">© 2026 Aetheria Network. All Rights Reserved</p>
+    <section class="connect-section" id="connect">
+        <h2 class="section-title" data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h2>
+        <div class="social-links">
+            <a href="#" class="social-item glass"><i class="fab fa-discord"></i> Discord</a>
+            <a href="#" class="social-item glass"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="social-item glass"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="#" class="social-item glass"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </section>
+
+    <footer class="glass">
+        <p>&copy; 2026 Aetheria Network. All rights reserved.</p>
+        <p>Made By TheRealVenom</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
